@@ -1,0 +1,24 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    margin: 20px;
+}
+
+
+/* TODO INPUT */
+
+
+
+/* TODO List */
+.list{
+
+}
+
+.lists{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+}

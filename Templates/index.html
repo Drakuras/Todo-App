@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+      <!-- Header -->
+    <header>
+      <h1>Todo app</h1>
+    </header>
+    <!-- container -->
+    <div class="container">
+      <!-- form -->
+      <form onsubmit="submitHandler(event)" class="form_css">
+        <div>
+          <label>Todo</label><input type="text" placeholder="Todo" class="todo"/>
+          <label>Assign</label><input type="text" placeholder="Assign" class="assign"/>
+          <label>Start Date</label><input class="start_date" type="date">
+          <label>End Date</label><input class="end_date" type="date">
+        </div>
+          <button>Submit</button>
+        </div>
+      </form>
+      <!-- End form -->
+
+      <!-- Todo List -->
+      <ul class="list">
+
+      </ul>
+      <!-- End Todo list -->
+
+    <!-- Script -->
+      <script src="../script.js">
+
+      </script>
+    </div>
+  </body>
+</html>
