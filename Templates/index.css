@@ -6,19 +6,88 @@ body{
     margin: 20px;
 }
 
+header{
+    display: flex;
+    flex-direction: row;
+}
+
+.header_class{
+    justify-self: flex-end;
+    margin-left: auto;
+    
+}
+.counter{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border: 2px solid;
+    width: 30rem;
+    padding: 20px;
+}
+/* General class */
+.all{
+    padding: 20px;
+
+
+}
+.border {
+    border: 2px solid black;
+    border-radius: 20px;
+}
 
 /* TODO INPUT */
 
+.container {
+   
+    padding: 20px;
+    width: 30%;
+    height: 44em;
+    position: fixed;
 
-
+}
+.inp{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content:flex-end;
+}
+.inp_border{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+}
 /* TODO List */
 .list{
-
+    width: 50%;
+    margin-left: auto;
+    
 }
 
 .lists{
-    border: 2px solid black;
-    border-radius: 20px;
     padding: 20px;
-    width: 50%;
+    width: 90%;
+    
+}
+
+.check{
+    
+
+}
+
+ul{
+    list-style: none;
+    padding: 10px;
+
+}
+li{
+    margin: 20px;
+}
+.delete{
+
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
 }

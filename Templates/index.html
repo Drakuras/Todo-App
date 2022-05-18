@@ -10,27 +10,62 @@
   <body>
       <!-- Header -->
     <header>
-      <h1>Todo app</h1>
-    </header>
+
+      <h1>Todo</h1>
+      <p>Add todo item below</p>
+      <div class="header_class">
+        <div class="counter border">
+          <h2>Completed :</h2>
+          <p>{% TOTAL %}</p>
+          <h2>Total :</h2>
+          <p>{% COUNTER %}</p>
+        </div>
+      </header>
+
+      </div>
+     
+    <div class="all">
+
+    
     <!-- container -->
-    <div class="container">
+    <div class="container border">
       <!-- form -->
       <form onsubmit="submitHandler(event)" class="form_css">
         <div>
-          <label>Todo</label><input type="text" placeholder="Todo" class="todo"/>
-          <label>Assign</label><input type="text" placeholder="Assign" class="assign"/>
-          <label>Start Date</label><input class="start_date" type="date">
-          <label>End Date</label><input class="end_date" type="date">
-        </div>
-          <button>Submit</button>
+          <div class="inp border">
+            <label>Title</label><input type="text" placeholder="title" class="inp_border title"/>
+          </div>
+          <div class="inp border">
+            <label>Description</label><textarea name="" class="inp_border todo" cols="30" rows="10"></textarea>
+
+          </div>
+          <div class="inp border">
+            <label>Assign</label><input type="text" placeholder="Assign" class="inp_border assign"/>
+
+          </div>
+          <div class="inp border">
+            <label>Start Date</label><input class="inp_border start_date" type="date">
+
+          </div>
+          <div class="inp border">
+            <label>End Date</label><input class="inp_border end_date" type="date">
+
+          </div>
+          <div class="inp border">
+            <button>Submit</button>
+            
+
+          </div>         
         </div>
       </form>
+    </div>
       <!-- End form -->
 
       <!-- Todo List -->
       <ul class="list">
 
       </ul>
+    </div>
       <!-- End Todo list -->
 
     <!-- Script -->
