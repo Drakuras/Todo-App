@@ -10,7 +10,8 @@ let counter = document.querySelector(".counter");
 const body = document.querySelector("body");
 const deleteButton = document.querySelector(".delete_button");
 const check = document.getElementsByClassName("checkbox");
-
+const clearer = document.querySelector(".clearer");
+let i = 0;
 let todos = [];
 
 // Event listeners
@@ -26,7 +27,7 @@ const submitHandler = (e) => {
   
   <div class="options">
     <input class='checkbox' type="checkbox" />
-    <button type='submit' class="delete_button"><span class="material-symbols-outlined">
+    <button type='submit' class="delete_button"><span class="delete material-symbols-outlined">
     delete
     </span></button>
   </div>
@@ -36,19 +37,21 @@ const submitHandler = (e) => {
 
   todos = [...container.children];
 
-  todos.map((el, i, arr) => {
+  todos.map((el) => {
     el.children[1].lastElementChild.addEventListener("click", () => {
       el.remove();
     });
   });
+
   counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
 };
-let i = 0;
 
 document.addEventListener("click", (e) => {
   let element = e.target;
+  console.log(e);
+
   if (element.classList.contains("checkbox")) {
-    if (element.checked) {
+    if (e.checked) {
       e.path[2].style.backgroundColor = "green";
       e.path[2].style.transitionDuration = "200ms";
       i++;
@@ -57,7 +60,16 @@ document.addEventListener("click", (e) => {
       e.path[2].style.transitionDuration = "200ms";
       i--;
     }
+    element.parentNode.lastElementChild.addEventListener("click", () => {
+      i--;
+    });
   }
   counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
-  ("");
+});
+
+clearer.addEventListener("click", () => {
+  console.log("adsad");
+  i *= 0;
+  container.innerHTML = "";
+  counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
 });
