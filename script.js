@@ -45,30 +45,33 @@ const submitHandler = (e) => {
 
   counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
 };
-
+let isItChecked = "d";
 document.addEventListener("click", (e) => {
   let element = e.target;
-  console.log(e);
+  let del = element.classList.contains("delete");
+  let ch = element.classList.contains("checkbox");
 
-  if (element.classList.contains("checkbox")) {
-    if (e.checked) {
+  if (ch) {
+    if (element.checked === true) {
       e.path[2].style.backgroundColor = "green";
       e.path[2].style.transitionDuration = "200ms";
+      isItChecked = true;
       i++;
-    } else {
+    } else if (element.checked === false) {
       e.path[2].style.backgroundColor = "black";
       e.path[2].style.transitionDuration = "200ms";
       i--;
+      isItChecked = false;
     }
-    element.parentNode.lastElementChild.addEventListener("click", () => {
+  } else if (del) {
+    if (isItChecked === true) {
       i--;
-    });
+    }
   }
   counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
 });
 
 clearer.addEventListener("click", () => {
-  console.log("adsad");
   i *= 0;
   container.innerHTML = "";
   counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
