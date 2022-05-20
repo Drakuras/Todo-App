@@ -2,92 +2,98 @@
     padding: 0px;
     margin: 0px;
 }
+
 body{
-    margin: 20px;
+    background-color: rgb(121, 121, 121);
+    font-family: sans-serif;
 }
 
-header{
-    display: flex;
-    flex-direction: row;
+/* global css */
+.border{
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 10px;
+}
+.boxshadow{
+    -webkit-box-shadow: -8px 10px 0px -2px rgba(0,0,0,0.78); 
+box-shadow: -8px 10px 0px -2px rgba(0,0,0,0.78);
 }
 
-.header_class{
-    justify-self: flex-end;
-    margin-left: auto;
-    
-}
-.counter{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    border: 2px solid;
-    width: 30rem;
-    padding: 20px;
-}
-/* General class */
-.all{
-    padding: 20px;
 
+/* end of global css */
 
-}
-.border {
-    border: 2px solid black;
-    border-radius: 20px;
-}
-
-/* TODO INPUT */
+/* container */
 
 .container {
-   
-    padding: 20px;
-    width: 30%;
-    height: 44em;
-    position: fixed;
-
-}
-.inp{
-    margin: 10px;
+    background-color: white;
     padding: 10px;
-    display: flex;
-    justify-content:flex-end;
-}
-.inp_border{
-    margin: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-}
-/* TODO List */
-.list{
-    width: 50%;
+    width: 40%;
+    height: 100%;
     margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    overflow-y: scroll;
+    
+    height: 500px;
     
 }
 
-.lists{
-    padding: 20px;
-    width: 90%;
-    
-}
-
-.check{
-    
-
-}
-
-ul{
-    list-style: none;
-    padding: 10px;
-
-}
-li{
+.todo{
+    position: sticky;
+    width: 36%;
     margin: 20px;
-}
-.delete{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white
 
+}
+.todo_text{
+    padding: 10px;
+    font-weight: bold;
+}
+.add_todo{
+    display: flex;
+    margin: 10px;
+    
+}
+.todo_item{
+    margin: 20px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+/* input css */
+
+input[type='text']{
+    font-weight: bold;
+    width: 90%;
+}
+input[type='checkbox']{
+    transform: scale(2);
+ 
+    
 }
 
 .options {
+   
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px;
+}
+
+.delete_button{
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn_button{
+    height: 50px;
+    
+
+}
+
+.counter {
+    
 }

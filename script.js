@@ -1,71 +1,58 @@
 "use strict";
+
 // Elements
-const form = document.querySelector(".form_css");
-const todo = document.querySelector(".todo");
-const assign = document.querySelector(".assign");
-const startDate = document.querySelector(".start_date");
-const endDate = document.querySelector(".end_date");
-const list = document.querySelector(".list");
-const lists = document.querySelectorAll(".lists");
-const title = document.querySelector(".title");
-const check = document.querySelector(".check");
-const counterElement = document.querySelector(".counter");
-// Variables
-let completed = 0;
-let counter = 0;
+const addTodo = document.querySelector(".add_todo");
+const todoItem = document.querySelector(".todo_item");
+const todoText = document.querySelector(".todo_text");
+const addButton = document.querySelector(".add_button");
+const container = document.querySelector(".container");
+let counter = document.querySelector(".counter");
+const body = document.querySelector("body");
+const deleteButton = document.querySelector(".delete_button");
+const check = document.getElementsByClassName("checkbox");
 
-// Functions
+let todos = [];
 
-//Submit function creates a new list element by inserting the values from the form
+// Event listeners
+
 const submitHandler = (e) => {
   e.preventDefault();
-  const dates =
-    startDate.value != "" && endDate.value != ""
-      ? `starts on the ${startDate.value} and ends in ${endDate.value}`
-      : `No date set`;
-  list.insertAdjacentHTML(
-    "beforeend",
-    `<li class='lists border'>
+  todoText.value == "" ? (todoText.value = "Empty") : todoText.value;
 
-        <h1>${title.value}</h1>
-        <p>${todo.value}</p>
-        <p> Assigned to ${assign.value}</p>
-        <p><em>${dates}</em></p>
-        <div class='options'>
-          <input type="checkbox" name="" class="check" onclick="checkHandler(event)">
-          <button onclick='deleteHandler(event)'>Delete</button>
-        </div>
-        
-      </li>`
+  container.insertAdjacentHTML(
+    "afterbegin",
+    `<div draggable='true' class="todo_item border boxshadow">
+  <h1>${todoText.value}</h1>
+  
+  <div class="options">
+    <input class='checkbox' type="checkbox" />
+    <button type='submit' class="delete_button">Delete</button>
+  </div>
+  </div>`
   );
-  todo.value = title.value = assign.value = "";
-  counter++;
-  countFunc();
-};
+  todoText.value = "";
 
-const checkHandler = (e) => {
-  if (e.path[0].checked === true) {
-    completed++;
-  } else {
-    completed--;
+  todos = [...container.children];
+
+  todos.map((el, i, arr) => {
+    el.children[1].lastElementChild.addEventListener("click", () => {
+      el.remove();
+    });
+  });
+  counter.innerHTML = `<h1> ${container.childElementCount}/${i}</h1>`;
+};
+let i = 0;
+
+document.addEventListener("click", (e) => {
+  let element = e.target;
+  let counterz = 0;
+
+  if (element.classList.contains("checkbox")) {
+    if (element.checked) {
+      i++;
+    } else {
+      i--;
+    }
   }
-  countFunc();
-};
-
-const deleteHandler = (e) => {
-  console.log("clicked");
-  console.log(e.path[1].outerHTML);
-  e.path[1].innerHTML = "";
-  e.path[1].outerHTML = "";
-  counter--;
-  countFunc();
-};
-
-const countFunc = () => {
-  counterElement.children[1].textContent = completed;
-  counterElement.children[3].textContent = counter;
-
-  // counterElement.innerHTML = elcount;
-};
-countFunc();
-// event listerner for checkbox
+  counter.innerHTML = `<h1> ${container.childElementCount}/${i}</h1>`;
+});

@@ -5,73 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <title>Document</title>
   </head>
   <body>
-      <!-- Header -->
-    <header>
-
-      <h1>Todo</h1>
-      <p>Add todo item below</p>
-      <div class="header_class">
-        <div class="counter border">
-          <h2>Completed :</h2>
-          <p>{% TOTAL %}</p>
-          <h2>Total :</h2>
-          <p>{% COUNTER %}</p>
-        </div>
-      </header>
-
-      </div>
-     
-    <div class="all">
-
-    
-    <!-- container -->
-    <div class="container border">
-      <!-- form -->
-      <form onsubmit="submitHandler(event)" class="form_css">
-        <div>
-          <div class="inp border">
-            <label>Title</label><input type="text" placeholder="title" class="inp_border title"/>
-          </div>
-          <div class="inp border">
-            <label>Description</label><textarea name="" class="inp_border todo" cols="30" rows="10"></textarea>
-
-          </div>
-          <div class="inp border">
-            <label>Assign</label><input type="text" placeholder="Assign" class="inp_border assign"/>
-
-          </div>
-          <div class="inp border">
-            <label>Start Date</label><input class="inp_border start_date" type="date">
-
-          </div>
-          <div class="inp border">
-            <label>End Date</label><input class="inp_border end_date" type="date">
-
-          </div>
-          <div class="inp border">
-            <button>Submit</button>
-            
-
-          </div>         
-        </div>
+    <div class="todo border boxshadow">
+      <h1>TODO APP</h1>
+      <form onsubmit="submitHandler(event)" class="add_todo">
+        <input class="todo_text border" type="text" />
+        <button class="">
+          <span class="add_button material-symbols-outlined"> add_task </span>
+        </button>
       </form>
+      <div class="counter">
+        <h1>0/0</h1>
+      </div>
     </div>
-      <!-- End form -->
+    <div class="container border boxshadow"></div>
 
-      <!-- Todo List -->
-      <ul class="list">
-
-      </ul>
-    </div>
-      <!-- End Todo list -->
-
-    <!-- Script -->
-      <script src="../script.js">
-
-      </script>
-    </div>
+    <script src="../script.js"></script>
   </body>
 </html>
