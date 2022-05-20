@@ -4,8 +4,10 @@
 }
 
 body{
-    background-color: rgb(121, 121, 121);
+
     font-family: sans-serif;
+    color: white;
+    background-color: black;
 }
 
 /* global css */
@@ -14,8 +16,15 @@ body{
     border-radius: 10px;
 }
 .boxshadow{
-    -webkit-box-shadow: -8px 10px 0px -2px rgba(0,0,0,0.78); 
-box-shadow: -8px 10px 0px -2px rgba(0,0,0,0.78);
+
+}
+.coolbackground {
+    background-image: linear-gradient(
+  15deg,
+  hsl(240deg 100% 20%) 1%,
+  hsl(346deg 83% 51%) 50%,
+  hsl(55deg 100% 50%) 99%
+);
 }
 
 
@@ -24,32 +33,28 @@ box-shadow: -8px 10px 0px -2px rgba(0,0,0,0.78);
 /* container */
 
 .container {
-    background-color: white;
-    padding: 10px;
-    width: 40%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    overflow-y: scroll;
-    
-    height: 500px;
+
+    padding: 20px;
+    width: 55%;
+    overflow-y:auto;
+    height: 95vh;
     
 }
 
 .todo{
-    position: sticky;
+    position: fixed;
+    right: 2em;
+    height: 400px;
     width: 36%;
     margin: 20px;
     padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white
+    background-color: rgba(0, 0, 0, 0.708);
 
 }
 .todo_text{
     padding: 10px;
     font-weight: bold;
+    
 }
 .add_todo{
     display: flex;
@@ -61,6 +66,9 @@ box-shadow: -8px 10px 0px -2px rgba(0,0,0,0.78);
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
+    
+    background-color: rgba(0, 0, 0, 0.708);
+    
    
 }
 /* input css */
@@ -81,19 +89,17 @@ input[type='checkbox']{
     justify-content: space-between;
     width: 100%;
     margin: 20px;
+    position: relative;
 }
 
 .delete_button{
-    padding: 10px;
-    margin: 10px;
+    position: absolute;
+    right: 30px;
+ 
 }
 
 .btn_button{
     height: 50px;
     
 
-}
-
-.counter {
-    
 }

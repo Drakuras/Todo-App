@@ -20,13 +20,15 @@ const submitHandler = (e) => {
   todoText.value == "" ? (todoText.value = "Empty") : todoText.value;
 
   container.insertAdjacentHTML(
-    "afterbegin",
+    "beforeend",
     `<div draggable='true' class="todo_item border boxshadow">
   <h1>${todoText.value}</h1>
   
   <div class="options">
     <input class='checkbox' type="checkbox" />
-    <button type='submit' class="delete_button">Delete</button>
+    <button type='submit' class="delete_button"><span class="material-symbols-outlined">
+    delete
+    </span></button>
   </div>
   </div>`
   );
@@ -39,20 +41,23 @@ const submitHandler = (e) => {
       el.remove();
     });
   });
-  counter.innerHTML = `<h1> ${container.childElementCount}/${i}</h1>`;
+  counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
 };
 let i = 0;
 
 document.addEventListener("click", (e) => {
   let element = e.target;
-  let counterz = 0;
-
   if (element.classList.contains("checkbox")) {
     if (element.checked) {
+      e.path[2].style.backgroundColor = "green";
+      e.path[2].style.transitionDuration = "200ms";
       i++;
     } else {
+      e.path[2].style.backgroundColor = "black";
+      e.path[2].style.transitionDuration = "200ms";
       i--;
     }
   }
-  counter.innerHTML = `<h1> ${container.childElementCount}/${i}</h1>`;
+  counter.innerHTML = `<h1> ${container.childElementCount} Todo</br>${i} Completed</h1>`;
+  ("");
 });
