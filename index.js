@@ -4,7 +4,7 @@ particlesJS(
   {
     particles: {
       number: {
-        value: 80,
+        value: 7,
         density: {
           enable: true,
           value_area: 800,
@@ -14,13 +14,13 @@ particlesJS(
         value: "#000",
       },
       shape: {
-        type: "polygon",
+        type: "star",
         stroke: {
-          width: 50,
+          width: 90,
           color: "#2345",
         },
         polygon: {
-          nb_sides: 6,
+          nb_sides: 3,
         },
         image: {
           src: "img/github.svg",
@@ -49,11 +49,11 @@ particlesJS(
         },
       },
       line_linked: {
-        enable: false,
-        distance: 150,
-        color: "#00eeff",
+        enable: true,
+        distance: 450,
+        color: "#ff1100",
         opacity: 1,
-        width: 1,
+        width: 5,
       },
       move: {
         enable: true,

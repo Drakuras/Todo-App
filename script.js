@@ -12,7 +12,6 @@ const deleteButton = document.getElementsByClassName("delete");
 const todoTitle = document.querySelector(".todo_title");
 const mainTitle = document.querySelector(".main_title");
 const addTitle = document.querySelector(".add_title");
-
 const clearer = document.querySelector(".clearer");
 let i = 0;
 let todos = [];
@@ -38,12 +37,13 @@ const titleHandler = (e) => {
 
 const submitHandler = (e) => {
   e.preventDefault();
-  arr.push(deleteButton);
   container.insertAdjacentHTML(
     "beforeend",
-    `<div draggable='true' class="todo_item border boxshadow">
+    `<div draggable='true' class="todo_item border boxshadow draggable">
 
-      <h1>${todoText.value}</h1>
+      <h1 contenteditable='true'>${
+        todoText.value === "" ? "Empty" : todoText.value
+      }</h1>
   
       <div class="options">
         <input class='checkbox' type="checkbox" name='fruit' />
@@ -51,6 +51,9 @@ const submitHandler = (e) => {
         delete
         </span></button>
       </div>
+      <div class="description">
+          <p data-placeholder="Click to edit description" contenteditable="true"></p>
+        </div>
      </div>`
   );
   todoText.value = "";
@@ -69,6 +72,7 @@ const submitHandler = (e) => {
 
   counter.innerHTML = `<h1>Total: ${container.childElementCount}</br>Completed: ${i} </h1>`;
   checkHandler();
+  draggableHandler();
 };
 
 document.addEventListener("click", (e) => {
@@ -102,3 +106,51 @@ const checkHandler = () => {
     };
   });
 };
+
+const draggableHandler = () => {
+  const draggables = document.querySelectorAll(".draggable");
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", () => {
+      draggable.classList.add("dragging");
+    });
+    draggable.addEventListener("dragend", () => {
+      draggable.classList.remove("dragging");
+    });
+  });
+
+  container.addEventListener("dragover", (e) => {
+    e.preventDefault();
+
+    const afterElement = getDragAfterElement(container, e.clientY);
+    const draggable = document.querySelector(".dragging");
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+};
+
+function getDragAfterElement(container, y) {
+  const draggableElements = [
+    ...container.querySelectorAll(".draggable:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      console.log(offset);
+
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}
+
+addButton.click();

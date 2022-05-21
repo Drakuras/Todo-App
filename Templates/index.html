@@ -15,9 +15,13 @@
   <body>
     <div id="particles-js"></div>
     <div class="todo border boxshadow coolbackground">
+      <div class="main_title border">
+        <h1 contentEditable="true">Shopping List</h1>
+        <hr/>
+      </div>
       
       
-      <h1>TODO APP 📔// <em>By Declan Rasaitear</em></h1>
+      <h1>TODO APP ✔️</h1>
       <br />
       <br/>
       <div class="todo_title_css border boxshadow">
@@ -49,19 +53,68 @@
           
         </div>
         <button class="clearer border"> <h1>Clear all</h1></button>
+        
 
     </div>
-
-    <div class="main_title">
-      <h1>Empty Title</h1>
-    </div>
-   
-
-   
-
-    
-
     <div class="container">
+      <div draggable='true' class="todo_item border boxshadow draggable">
+
+        <h1 contenteditable='true'>Eggs 🥚</h1>
+
+          
+    
+        <div class="options">
+          <input class='checkbox' type="checkbox" name='fruit' />
+          <button onclick='deleteHandler()' class="delete_button"><span class="delete material-symbols-outlined">
+          delete
+          </span></button>
+        </div>
+        <div class="description">
+          <p data-placeholder="Click to edit description" contenteditable="true"></p>
+        </div>
+       </div>
+       <div draggable='true' class="todo_item border boxshadow draggable">
+
+        <h1 contenteditable='true'>Pancakes 🥞</h1>
+    
+        <div class="options">
+          <input class='checkbox' type="checkbox" name='fruit' />
+          <button onclick='deleteHandler()' class="delete_button"><span class="delete material-symbols-outlined">
+          delete
+          </span></button>
+        </div>
+        <div class="description">
+          <p data-placeholder="Click to edit description" contenteditable="true"></p>
+        </div>
+       </div>
+       <div draggable='true' class="todo_item border boxshadow draggable">
+
+        <h1 contenteditable='true'>Apple 🍎</h1>
+    
+        <div class="options">
+          <input class='checkbox' type="checkbox" name='fruit' />
+          <button onclick='deleteHandler()' class="delete_button"><span class="delete material-symbols-outlined">
+          delete
+          </span></button>
+        </div>
+        <div class="description">
+          <p data-placeholder="Click to edit description" contenteditable="true"></p>
+        </div>
+       </div>
+       <div draggable='true' class="todo_item border boxshadow draggable">
+
+        <h1 contenteditable='true'>Honey 🍯</h1>
+    
+        <div class="options">
+          <input class='checkbox' type="checkbox" name='fruit' />
+          <button onclick='deleteHandler()' class="delete_button"><span class="delete material-symbols-outlined">
+          delete
+          </span></button>
+        </div>
+        <div class="description">
+          <p data-placeholder="Click to edit description" contenteditable="true"></p>
+        </div>
+       </div>
       
     </div>
     

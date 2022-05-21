@@ -14,19 +14,20 @@ body{
 /* global css */
 .border{
     border: 1px solid rgba(255, 246, 246, 0.482);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .boxshadow{
     -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.56); 
-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.56);
+box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.29);
 
 }
 .coolbackground {
+
     background-image: linear-gradient(
-  15deg,
-  hsl(240deg 100% 20%) 1%,
-  hsl(346deg 83% 51%) 50%,
-  hsl(55deg 100% 50%) 99%
+  30deg,
+  rgb(51, 51, 196) 1%,
+  rgba(58, 68, 94, 0.426) 50%,
+  rgb(255, 51, 0) 99%
 );
 
 }
@@ -58,11 +59,22 @@ box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.56);
     background-color: rgba(19, 19, 19, 0.708);
 
 
+
+
 }
 
 .main_title{
-    padding: 20px;
-    margin-bottom: 0px;
+
+    width: 300px;
+    position: fixed;
+
+
+    right: 2em;
+    bottom: 130px;
+    height: 200px;
+    width: 36%;
+    margin: 20px;
+    padding: 10px;
     
 
 }
@@ -88,7 +100,7 @@ box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.56);
     margin-left: auto;
     margin-right: auto;
     
-    background-color: rgba(0, 0, 0, 0.708);
+    background-color: rgba(71, 68, 68, 0.708);
     
    
 }
@@ -235,7 +247,7 @@ input[type='checkbox']{
   #particles-js{
     width: 100%;
     height: 100%;
-    background-color: #171515;
+    background-color: #03020c;
     background-image: url('');
     background-size: cover;
     background-position: 50% 50%;
@@ -248,3 +260,20 @@ input[type='checkbox']{
 
   }
   
+  .draggable.dragging {
+    opacity: 0.5
+  }
+
+  .description {
+      padding: 20px;
+      margin: 20px;
+      
+  }
+
+  .description p {
+      height: 130px;
+  }
+
+  p:empty:not(:focus)::before {
+    content: attr(data-placeholder);
+  }
