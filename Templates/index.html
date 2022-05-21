@@ -13,27 +13,62 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="particles-js"></div>
     <div class="todo border boxshadow coolbackground">
-      <h1>TODO APP // <em>By Declan Rasaitear</em></h1>
-      <p>Add a todo below</p>
-      <form onsubmit="submitHandler(event)" class="add_todo">
-        <input class="todo_text border" type="text" />
-        <button class="">
-          <span class="add_button material-symbols-outlined"> add_task </span>
+      
+      
+      <h1>TODO APP 📔// <em>By Declan Rasaitear</em></h1>
+      <br />
+      <br/>
+      <div class="todo_title_css border boxshadow">
+        <label>Todo Title</label>
+        <input class="todo_title border" type="text">
+        <button onclick='titleHandler(event)' class="border" >
+          <span class="add_title material-symbols-outlined"> add_task </span>
         </button>
+
+      </div>
+
+      <form onsubmit="submitHandler(event)" class="add_todo">
+
+        <div class="inputs border boxshadow">
+          <label>Todo</label>
+          <div>
+            <input class="todo_text border" type="text" />
+          <button class="add_button border">
+            <span class=" material-symbols-outlined"> add_task </span>
+          </button>
+
+          </div>
+          
+        </div>
       </form>
 
         <div class="counter">
-          <h1> 0 Todo</br>0 Completed</h1>
+          <h1>Total: 0</br>Completed: 0</h1>
           
         </div>
         <button class="clearer border"> <h1>Clear all</h1></button>
 
-      
     </div>
 
-    <div class="container"></div>
+    <div class="main_title">
+      <h1>Empty Title</h1>
+    </div>
+   
+
+   
+
+    
+
+    <div class="container">
+      
+    </div>
+    
 
     <script src="../script.js"></script>
+    <script src="../particles.js"></script>
+    <script src="../index.js"></script>
+  </div>
   </body>
 </html>

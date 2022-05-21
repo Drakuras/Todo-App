@@ -7,15 +7,18 @@ body{
 
     font-family: sans-serif;
     color: white;
-    background-color: black;
+    background-color: rgb(38, 37, 37);
+    overflow: hidden;
 }
 
 /* global css */
 .border{
-    border: 1px solid rgb(190, 190, 190);
+    border: 1px solid rgba(255, 246, 246, 0.482);
     border-radius: 10px;
 }
 .boxshadow{
+    -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.56); 
+box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.56);
 
 }
 .coolbackground {
@@ -25,6 +28,7 @@ body{
   hsl(346deg 83% 51%) 50%,
   hsl(55deg 100% 50%) 99%
 );
+
 }
 
 
@@ -47,21 +51,35 @@ body{
 .todo{
     position: fixed;
     right: 2em;
-    height: 400px;
+    height: 500px;
     width: 36%;
     margin: 20px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.708);
+    background-color: rgba(19, 19, 19, 0.708);
+
+
+}
+
+.main_title{
+    padding: 20px;
+    margin-bottom: 0px;
+    
 
 }
 .todo_text{
     padding: 10px;
-    font-weight: bold;
+
     
+}
+.todo_title {
+    padding: 10px;
+
 }
 .add_todo{
     display: flex;
-    margin: 10px;
+    flex-direction: column;
+    
+
     
 }
 .todo_item{
@@ -77,9 +95,10 @@ body{
 .clearer {
     width: 150px;
     height: 50px;
-    background-color: red;
+    background-color: transparent;
     transition-duration: 200ms;
     bottom: 10px;
+    color: white;
     position: absolute;
     
     
@@ -103,6 +122,10 @@ body{
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.708);
 
+}
+
+.counter {
+    padding: 20px;
 }
 
 /* input css */
@@ -136,8 +159,92 @@ input[type='checkbox']{
  
 }
 
+.add_button {
+ 
+}
+
 .btn_button{
     height: 50px;
     
 
 }
+
+.inputs{
+    padding: 20px;
+    margin: 5px;
+    width: 90%;
+    
+
+}
+
+.inputs_inner {
+    display: flex;
+}
+
+.todo_title_css {
+    padding: 20px;
+    margin: 5px;
+    width: 90%;
+
+}
+
+  
+  
+  /* ---- stats.js ---- */
+  
+  .count-particles{
+    background: #313030;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #fdfdfd;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  .js-count-particles{
+    font-size: 1.1em;
+  }
+  
+  #stats,
+  .count-particles{
+    -webkit-user-select: none;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  
+  #stats{
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+  }
+  
+  .count-particles{
+    border-radius: 0 0 3px 3px;
+
+  }
+  
+  
+  /* ---- particles.js container ---- */
+  
+  #particles-js{
+    width: 100%;
+    height: 100%;
+    background-color: #171515;
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+
+   
+
+  }
+  
